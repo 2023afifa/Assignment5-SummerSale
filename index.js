@@ -4,14 +4,17 @@ function applyDiscount(total) {
     document.getElementById("code").addEventListener("keyup", function (event) {
         const textCode = event.target.value;
         if (textCode == "SELL200") {
-            const discountPrice = document.getElementById("discount-price");
-            const discount = (total * (20 / 100));
-            const discountTk = discount.toFixed(2);
-            discountPrice.innerText = discountTk;
+            const applyBtn = document.getElementById("apply-btn");
+            applyBtn.addEventListener("click", function () {
+                const discountPrice = document.getElementById("discount-price");
+                const discount = (total * (20 / 100));
+                const discountTk = discount.toFixed(2);
+                discountPrice.innerText = discountTk;
 
-            const totalAfterDiscount = total - discountTk;
-            const totalAfterDis = document.getElementById("total-dis-price");
-            totalAfterDis.innerText = totalAfterDiscount;
+                const totalAfterDiscount = total - discountTk;
+                const totalAfterDis = document.getElementById("total-dis-price");
+                totalAfterDis.innerText = totalAfterDiscount;
+            })
         }
     })
 }
