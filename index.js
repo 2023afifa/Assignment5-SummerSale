@@ -1,7 +1,15 @@
 let total = 0;
 
 function applyButton() {
-    console.log("you can get a discount");
+    document.getElementById("code").addEventListener("keyup", function (event) {
+        const textCode = event.target.value;
+        if( textCode == "SELL200"){
+            console.log("hi");
+        }
+    })
+    // const applyButton = document.getElementById("apply-btn");
+    // applyButton.disabled = false;
+    // console.log("you can get a discount");
 }
 
 function discountPrices(discount, total) {
@@ -13,6 +21,14 @@ function totalAfterDiscount(discount, total) {
     const totalPriceDis = total - discount;
     return totalPriceDis;
 }
+
+document.getElementById("home-btn").addEventListener("click", function(){
+    const itemPrice = document.getElementById("total-price");
+    itemPrice.innerText = "0";
+
+    const totalAfterDis = document.getElementById("total-dis-price");
+    totalAfterDis.innerText = "0";
+})
 
 function items(target) {
     const purchaseItem = document.getElementById("purchase");
@@ -28,33 +44,36 @@ function items(target) {
     const itemPrice = document.getElementById("total-price");
     itemPrice.innerText = total;
 
+    const totalAfterDis = document.getElementById("total-dis-price");
+    totalAfterDis.innerText = total;
+
     if (total > 0) {
         const purchaseBtn = document.getElementById("purchase-btn");
         purchaseBtn.disabled = false;
 
-    //     if (total >= 200) {
-    //         const applyButton = document.getElementById("apply-btn");
-    //         applyButton.disabled = false;
+        if (total >= 200) {
+            const applyBtn = document.getElementById("apply-btn");
+            applyBtn.disabled = false;
+            applyButton();
+            // const input = document.getElementById("input");
+            // const inputCode = input.value;
 
-    //         const input = document.getElementById("input");
-    //         const inputCode = input.value;
+            //         if (inputCode == "SELL200") {
 
-    //         if (inputCode == "SELL200") {
+            //             applyButton();
+            //             // document.getElementById("apply-btn").addEventListener("click", function () {
+            //             //     const discountPrice = document.getElementById("discount-price");
+            //             //     const discountStr = discountPrice.innerText;
+            //             //     const discount = parseFloat(discountStr);
 
-    //             applyButton();
-    //             // document.getElementById("apply-btn").addEventListener("click", function () {
-    //             //     const discountPrice = document.getElementById("discount-price");
-    //             //     const discountStr = discountPrice.innerText;
-    //             //     const discount = parseFloat(discountStr);
+            //             //     const disPrice =  discountPrices(discount, total);
+            //             //     discountPrice.innerText = disPrice;
+            //             // })
+            //         }
 
-    //             //     const disPrice =  discountPrices(discount, total);
-    //             //     discountPrice.innerText = disPrice;
-    //             // })
-    //         }
-
-    //         else {
-    //             alert("Enter the right code please");
-    //         }
-    //     }
+            //         else {
+            //             alert("Enter the right code please");
+            //         }
+        }
     }
 }
