@@ -10,7 +10,6 @@ function applyDiscount(total) {
             discountPrice.innerText = discountTk;
 
             const totalAfterDiscount = total - discountTk;
-
             const totalAfterDis = document.getElementById("total-dis-price");
             totalAfterDis.innerText = totalAfterDiscount;
         }
@@ -49,7 +48,7 @@ function items(target) {
     itemPrice.innerText = total;
 
     const totalAfterDis = document.getElementById("total-dis-price");
-            totalAfterDis.innerText = total;
+    totalAfterDis.innerText = total;
 
     if (total > 0) {
         const purchaseBtn = document.getElementById("purchase-btn");
