@@ -32,29 +32,29 @@ function items(target) {
         const purchaseBtn = document.getElementById("purchase-btn");
         purchaseBtn.disabled = false;
 
-        if (total >= 200) {
-            const applyButton = document.getElementById("apply-btn");
-            applyButton.disabled = false;
+    //     if (total >= 200) {
+    //         const applyButton = document.getElementById("apply-btn");
+    //         applyButton.disabled = false;
 
-            const input = document.getElementById("input");
-            const inputCode = input.value;
+    //         const input = document.getElementById("input");
+    //         const inputCode = input.value;
 
-            if (inputCode == "SELL200") {
+    //         if (inputCode == "SELL200") {
 
-                applyButton();
-                // document.getElementById("apply-btn").addEventListener("click", function () {
-                //     const discountPrice = document.getElementById("discount-price");
-                //     const discountStr = discountPrice.innerText;
-                //     const discount = parseFloat(discountStr);
+    //             applyButton();
+    //             // document.getElementById("apply-btn").addEventListener("click", function () {
+    //             //     const discountPrice = document.getElementById("discount-price");
+    //             //     const discountStr = discountPrice.innerText;
+    //             //     const discount = parseFloat(discountStr);
 
-                //     const disPrice =  discountPrices(discount, total);
-                //     discountPrice.innerText = disPrice;
-                // })
-            }
+    //             //     const disPrice =  discountPrices(discount, total);
+    //             //     discountPrice.innerText = disPrice;
+    //             // })
+    //         }
 
-            else {
-                alert("Enter the right code please");
-            }
-        }
+    //         else {
+    //             alert("Enter the right code please");
+    //         }
+    //     }
     }
 }
